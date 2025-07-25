@@ -67,6 +67,8 @@ func _physics_process(delta: float) -> void:
 		
 	if velocity.is_zero_approx():
 		animation_player.play("idle")
+		rotation_degrees = 0
+		print("Rotação atual do jogador: ", rotation)
 	elif !is_dashing:
 		animation_player.play("walk")
 

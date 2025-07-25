@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmxxaorypbfqr"]
+[gd_scene load_steps=5 format=3 uid="uid://bmxxaorypbfqr"]
 
 [ext_resource type="Texture2D" uid="uid://dx0r8mjlpo7mn" path="res://Art/Guns/US.png" id="1_e4gwe"]
 [ext_resource type="Script" path="res://Guns/pistol.gd" id="1_xrtu4"]
+[ext_resource type="Shader" path="res://Characters/blur_expansion.gdshader" id="2_wark7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kxbye"]
+shader = ExtResource("2_wark7")
+shader_parameter/radius = 1.0
+shader_parameter/blur_size = 1.0
+shader_parameter/color = Color(0, 0, 0, 0.4)
+shader_parameter/enable_blur = true
+shader_parameter/samples = 32
 
 [node name="Pistol" type="Node2D"]
 script = ExtResource("1_xrtu4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kxbye")
 position = Vector2(3, -2.5)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_e4gwe")
