@@ -15,7 +15,7 @@ shader_parameter/enable_blur = true
 shader_parameter/samples = 32
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ld1"]
-size = Vector2(7, 8)
+size = Vector2(8, 6.6)
 
 [sub_resource type="Animation" id="Animation_mioyl"]
 length = 0.001
@@ -212,7 +212,7 @@ initial_velocity_max = 50.0
 gravity = Vector3(0, 0, 0)
 color_ramp = SubResource("GradientTexture1D_1kj5v")
 
-[node name="PlayerOldMan" type="CharacterBody2D"]
+[node name="PlayerOldMan" type="CharacterBody2D" groups=["players"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_ny465")
 ghost_node = ExtResource("2_yo3ci")
@@ -229,7 +229,7 @@ region_rect = Rect2(-0.0482864, -0.0240459, 15.3697, 15.8603)
 region_filter_clip_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 4)
+position = Vector2(0.5, 3.3)
 shape = SubResource("RectangleShape2D_n2ld1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -30,7 +30,7 @@ var actual_hp : int = 3
 # Upgrades na bala do jogador
 var bullet_upgrades : Array[BaseBulletStrategy] = [
 	DamageBulletStrategy.new(),
-	TripleshotBulletStrategy.new()
+	#TripleshotBulletStrategy.new()
 ]
 
 # underscore in godot is equal to "unused"
@@ -74,7 +74,6 @@ func _physics_process(delta: float) -> void:
 	if velocity.is_zero_approx():
 		animation_player.play("idle")
 		rotation_degrees = 0
-		print("Rotação atual do jogador: ", rotation)
 	elif !is_dashing:
 		animation_player.play("walk")
 
@@ -112,12 +111,13 @@ func add_ghost():
 	ghost.texture = atlas
 	ghost.global_position = sprite.global_position
 	ghost.scale = scale
-	print(sprite.scale)
 	ghost.flip_h = sprite.flip_h
 	ghost.flip_v = sprite.flip_v
 
 	get_tree().current_scene.add_child(ghost)
 
+func add_bullet_upgrade(upgrade : BaseBulletStrategy):
+	bullet_upgrades.append(upgrade)
 
 func _on_ghost_timer_timeout() -> void:
 	add_ghost()

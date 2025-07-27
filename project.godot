@@ -25,6 +25,10 @@ window/size/viewport_height=900
 window/stretch/mode="canvas_items"
 window/stretch/scale=3.6
 
+[global_group]
+
+players="jogador ou jogadores (se eu implementar futuramente)"
+
 [input]
 
 right={

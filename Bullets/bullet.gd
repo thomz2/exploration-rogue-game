@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		var hit = $RayCast2D.get_collider()
 		# TODO colocar aqui um if "acertou grupo inimigo" para tratar caso uma das colisões pertença ao grupo "inimigos"
 		# - Além disso, uma boa seria colocar varios tipos de tratamento, para diferentes animações dependendo do que hitar por exemplo
-		print("Acertou: ", hit.name)
+		#print("Acertou: ", hit.name)
 		
 		$AnimationPlayer.play("disappear")
 		await $AnimationPlayer.animation_finished

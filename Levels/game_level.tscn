@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://bk0d82fo1tna0"]
+[gd_scene load_steps=12 format=4 uid="uid://bk0d82fo1tna0"]
 
+[ext_resource type="PackedScene" uid="uid://kwh4iipdygp3" path="res://Items/ItemArea.tscn" id="1_8kjsf"]
 [ext_resource type="Script" path="res://root_node.gd" id="1_jmqo8"]
 [ext_resource type="Texture2D" uid="uid://c0chqvhth8yls" path="res://Art/Pixel Dungeon Asset Pack/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="2_7pjbq"]
 [ext_resource type="Script" path="res://Scripts/camera_offset_by_aim_script.gd" id="3_kx50u"]
@@ -2234,6 +2235,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_i47ik")
 
 [node name="GameLevel" type="Node2D"]
+
+[node name="ItemArea" parent="." instance=ExtResource("1_8kjsf")]
+position = Vector2(104, 40)
 
 [node name="World" type="Node2D" parent="."]
 

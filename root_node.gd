@@ -239,14 +239,29 @@ func draw_dungeon():
 				else:
 					walls_layer.set_cell(tile, 0, inner_wall_tile)
 
+var item_area = preload("res://Items/ItemArea.tscn")
+var item_resource = preload("res://Resources/Items/Upgrades/tripleshot_item.tres")
+var item_area_node
+
 func _ready():
 	randomize()
 	initialize_room_matrix()
 	create_dungeon_skeleton()
 	generate_dungeon()
 	draw_dungeon()
+	
 	player.global_position = (rooms[0].position + rooms[0].size / 2) * CELL_SIZE
 	
+	item_area_node = item_area.instantiate()
+	item_area_node.init(item_resource)
+	item_area_node.visible = true
+	item_area_node.global_position = player.global_position + Vector2(120, 0)
+	
+	print(item_area_node)
+	
+	#get_tree().root.add_child(item_area_node)
+	add_child(item_area_node)
+	
 #func _physics_process(delta: float) -> void:
-	#print("posição do jogador:", $PlayerOldMan.global_position)
-	#print("posição da primeira sala:", (rooms[0].position + rooms[0].size / 2) * CELL_SIZE)
+	#print("posição do jogador:", player.global_position)
+	#print("posição do item:", item_area_node.global_position)
