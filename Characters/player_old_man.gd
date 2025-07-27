@@ -27,6 +27,12 @@ var dash_timer : float = 0.0
 var dash_cooldown_timer : float = 0.0
 var actual_hp : int = 3
 
+# Upgrades na bala do jogador
+var bullet_upgrades : Array[BaseBulletStrategy] = [
+	DamageBulletStrategy.new(),
+	TripleshotBulletStrategy.new()
+]
+
 # underscore in godot is equal to "unused"
 # delta é o intervalo de tempo entre o frame anterior e o atual.
 func _physics_process(delta: float) -> void:

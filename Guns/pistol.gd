@@ -1,7 +1,8 @@
 extends Node2D
 
 @onready var muzzle = $Marker2D
-@export var bullet_scene = preload("res://Bullets/bullet.tscn")
+@export var bullet_scene = preload("res://Bullets/bullet.tscn") # Aqui eu pego a scene para instanciar ela no mundo
+@onready var player = get_node("/root/GameLevel/PlayerOldMan")  # Aqui eu pego uma instância já existente
 
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
@@ -23,4 +24,9 @@ func fire():
 	bullet.direction = (get_global_mouse_position() - global_position).normalized()
 	bullet.rotation = bullet.direction.angle()
 	
-	get_tree().root.add_child(bullet)
+	var root = get_tree().root
+	root.add_child(bullet)
+	
+	# Aqui aplicamos o sistema modular de upgrades da bala
+	for strategy in player.bullet_upgrades:
+		strategy.apply_upgrade(bullet, root)
