@@ -9,10 +9,6 @@ shader = ExtResource("2_1wkf4")
 shader_parameter/white_override = false
 shader_parameter/whiteness = 0.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bn80j"]
-radius = 4.61539
-height = 13.8462
-
 [sub_resource type="Animation" id="Animation_nnobn"]
 length = 0.001
 tracks/0/type = "value"
@@ -144,6 +140,10 @@ _data = {
 "troll": SubResource("Animation_osblo")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bn80j"]
+radius = 4.61539
+height = 13.8462
+
 [node name="Bullet" type="Node2D" groups=["damagers"]]
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_5xlg1")
@@ -152,10 +152,6 @@ script = ExtResource("1_5xlg1")
 material = SubResource("ShaderMaterial_7lagt")
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("1_1tp1o")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_bn80j")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 visible = false
@@ -171,4 +167,11 @@ libraries = {
 visible = false
 target_position = Vector2(6.92308, 0)
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bn80j")
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

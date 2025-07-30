@@ -10,7 +10,7 @@ func _ready():
 			max_z_index = max(max_z_index, node.z_index)
 
 func _physics_process(delta: float) -> void:
-	var sortables = get_tree().get_nodes_in_group("sortable")
+	var sortables = get_tree().get_nodes_in_group("sortables")
 	for entity in sortables:
 		if entity.global_position.y > player.global_position.y:
 			entity.z_index = max_z_index + 1

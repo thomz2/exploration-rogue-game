@@ -29,7 +29,8 @@ window/stretch/scale=3.6
 
 players="jogador ou jogadores (se eu implementar futuramente)"
 damagers=""
-sortable=""
+sortables=""
+enemies=""
 
 [input]
 

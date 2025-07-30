@@ -19,10 +19,8 @@ func _physics_process(delta: float) -> void:
 		# - Além disso, uma boa seria colocar varios tipos de tratamento, para diferentes animações dependendo do que hitar por exemplo
 		#print("Acertou: ", hit.name)
 		
-		$AnimationPlayer.play("disappear")
-		await $AnimationPlayer.animation_finished
-		$AnimationPlayer.stop()
-		queue_free()
+		await hit_proccess()
+		
 		return
 		
 	global_position += direction * bullet_speed
@@ -34,11 +32,18 @@ func _physics_process(delta: float) -> void:
 	if bullet_speed <= 0:
 		queue_free()
 
-#func _ready():
-	#linear_velocity = direction * bullet_speed
+func hit_proccess():
+	$AnimationPlayer.play("disappear")
+	await $AnimationPlayer.animation_finished
+	$AnimationPlayer.stop()
+	queue_free()
 
 func _on_timer_timeout() -> void:
 	queue_free()
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent() in get_tree().get_nodes_in_group("enemies"):
+		await hit_proccess()
