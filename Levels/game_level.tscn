@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://bk0d82fo1tna0"]
+[gd_scene load_steps=13 format=4 uid="uid://bk0d82fo1tna0"]
 
 [ext_resource type="PackedScene" uid="uid://kwh4iipdygp3" path="res://Items/ItemArea.tscn" id="1_8kjsf"]
 [ext_resource type="Script" path="res://root_node.gd" id="1_jmqo8"]
+[ext_resource type="Script" path="res://Scripts/z_index_sorter.gd" id="1_ux6rb"]
 [ext_resource type="Texture2D" uid="uid://c0chqvhth8yls" path="res://Art/Pixel Dungeon Asset Pack/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="2_7pjbq"]
 [ext_resource type="Script" path="res://Scripts/camera_offset_by_aim_script.gd" id="3_kx50u"]
-[ext_resource type="PackedScene" uid="uid://btd1uwns5qxik" path="res://Enemies/skeleton.tscn" id="4_380bj"]
+[ext_resource type="PackedScene" uid="uid://btd1uwns5qxik" path="res://Entities/skeleton.tscn" id="4_380bj"]
 [ext_resource type="PackedScene" uid="uid://d0bhdhaidg4a3" path="res://Characters/player_old_man.tscn" id="5_sw5do"]
 [ext_resource type="Script" path="res://dungeon_debugger_view.gd" id="6_wd7wg"]
 
@@ -2235,6 +2236,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_i47ik")
 
 [node name="GameLevel" type="Node2D"]
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_ux6rb")
 
 [node name="ItemArea" parent="." instance=ExtResource("1_8kjsf")]
 position = Vector2(104, 40)
@@ -2256,16 +2260,8 @@ script = ExtResource("3_kx50u")
 [node name="Skeleton" parent="." instance=ExtResource("4_380bj")]
 position = Vector2(69, 35)
 
-[node name="Skeleton2" parent="." instance=ExtResource("4_380bj")]
-position = Vector2(69, -41)
-
-[node name="Skeleton3" parent="." instance=ExtResource("4_380bj")]
-position = Vector2(-55, 46)
-
-[node name="Skeleton4" parent="." instance=ExtResource("4_380bj")]
-position = Vector2(-37, -40)
-
 [node name="PlayerOldMan" parent="." instance=ExtResource("5_sw5do")]
+y_sort_enabled = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerOldMan"]
 remote_path = NodePath("../../Camera2D")
@@ -2274,6 +2270,7 @@ update_rotation = false
 update_scale = false
 
 [node name="DungeonGenerator" type="Node2D" parent="." node_paths=PackedStringArray("ground_layer", "walls_layer", "player", "mini_map_node")]
+y_sort_enabled = true
 script = ExtResource("1_jmqo8")
 ground_layer = NodePath("../World/Ground")
 walls_layer = NodePath("../World/Walls")

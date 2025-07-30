@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://gw5jpjfg6or3"]
+
+[ext_resource type="Script" path="res://Entities/training_dummy.gd" id="1_x8gq5"]
+[ext_resource type="Texture2D" uid="uid://vavkh6qv72to" path="res://Art/Entities/dummy.png" id="2_e0nlc"]
+[ext_resource type="Shader" path="res://Characters/blur_expansion.gdshader" id="2_jmfwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hmit"]
+size = Vector2(20, 31)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36m12"]
+shader = ExtResource("2_jmfwi")
+shader_parameter/radius = 1.0
+shader_parameter/blur_size = 1.2
+shader_parameter/color = Color(0, 0, 0, 0.8)
+shader_parameter/enable_blur = true
+shader_parameter/samples = 32
+
+[sub_resource type="Animation" id="Animation_u4buf"]
+resource_name = "took_damage"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.261799, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_crrkq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2n1nw"]
+_data = {
+"RESET": SubResource("Animation_crrkq"),
+"took_damage": SubResource("Animation_u4buf")
+}
+
+[node name="TrainingDummy" type="CharacterBody2D" groups=["sortable"]]
+z_index = 2
+z_as_relative = false
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_x8gq5")
+
+[node name="PhysicColl" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8.66667, -0.666667, 8.66667, -0.666667, 0, -3.33333)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_0hmit")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_36m12")
+scale = Vector2(-1, 1)
+texture = ExtResource("2_e0nlc")
+centered = false
+offset = Vector2(-16, -48)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2n1nw")
+}

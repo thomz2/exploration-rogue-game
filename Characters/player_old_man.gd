@@ -29,9 +29,14 @@ var actual_hp : int = 3
 
 # Upgrades na bala do jogador
 var bullet_upgrades : Array[BaseBulletStrategy] = [
-	DamageBulletStrategy.new(),
+	#DamageBulletStrategy.new(),
 	#TripleshotBulletStrategy.new()
 ]
+
+func _ready():
+	print("posição da arma: ", $Pistol.global_position.y)
+	print("posição do sprite: ", $Sprite2D.global_position.y)
+	
 
 # underscore in godot is equal to "unused"
 # delta é o intervalo de tempo entre o frame anterior e o atual.
@@ -114,6 +119,7 @@ func add_ghost():
 	ghost.flip_h = sprite.flip_h
 	ghost.flip_v = sprite.flip_v
 
+	# TODO ajeitar depois a porra do y-sort desse fantasma
 	get_tree().current_scene.add_child(ghost)
 
 func add_bullet_upgrade(upgrade : BaseBulletStrategy):

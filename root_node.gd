@@ -239,9 +239,14 @@ func draw_dungeon():
 				else:
 					walls_layer.set_cell(tile, 0, inner_wall_tile)
 
-var item_area = preload("res://Items/ItemArea.tscn")
+# Item de exemplo
+var item_area_scene = preload("res://Items/ItemArea.tscn")
 var item_resource = preload("res://Resources/Items/Upgrades/tripleshot_item.tres")
 var item_area_node
+
+# Dummy
+var dummy_scene = preload("res://Entities/training_dummy.tscn")
+var dummy_node
 
 func _ready():
 	randomize()
@@ -252,16 +257,22 @@ func _ready():
 	
 	player.global_position = (rooms[0].position + rooms[0].size / 2) * CELL_SIZE
 	
-	item_area_node = item_area.instantiate()
+	# Colocando item no mundo
+	item_area_node = item_area_scene.instantiate()
 	item_area_node.init(item_resource)
 	item_area_node.visible = true
-	item_area_node.global_position = player.global_position + Vector2(120, 0)
+	item_area_node.global_position = player.global_position + Vector2(-120, 0)
 	
-	print(item_area_node)
+	await get_parent().ready
 	
-	#get_tree().root.add_child(item_area_node)
-	add_child(item_area_node)
+	get_parent().add_child(item_area_node)
 	
+	dummy_node = dummy_scene.instantiate()
+	dummy_node.global_position = player.global_position + Vector2(120, 0)
+	
+	get_parent().add_child(dummy_node)
+	
+# Aqui serve apenas para debugar
 #func _physics_process(delta: float) -> void:
 	#print("posição do jogador:", player.global_position)
 	#print("posição do item:", item_area_node.global_position)

@@ -6,4 +6,7 @@
 modulate = Color(0.493545, 0.493546, 0.493546, 1)
 show_behind_parent = true
 z_index = 1
+z_as_relative = false
+centered = false
+offset = Vector2(-8, -22)
 script = ExtResource("1_yaa1c")

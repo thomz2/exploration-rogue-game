@@ -15,7 +15,7 @@ shader_parameter/enable_blur = true
 shader_parameter/samples = 32
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ld1"]
-size = Vector2(8, 6.6)
+size = Vector2(8, 3.3)
 
 [sub_resource type="Animation" id="Animation_mioyl"]
 length = 0.001
@@ -53,7 +53,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-4.76837e-07, -0.5)]
+"values": [Vector2(0, -0.5)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -213,23 +213,32 @@ gravity = Vector3(0, 0, 0)
 color_ramp = SubResource("GradientTexture1D_1kj5v")
 
 [node name="PlayerOldMan" type="CharacterBody2D" groups=["players"]]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
 scale = Vector2(2, 2)
 script = ExtResource("1_ny465")
 ghost_node = ExtResource("2_yo3ci")
 bullet_speed = 10.0
 
+[node name="Pistol" parent="." instance=ExtResource("4_h5t58")]
+z_as_relative = true
+y_sort_enabled = false
+position = Vector2(4, -4.5)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 1
 material = SubResource("ShaderMaterial_23qf6")
-position = Vector2(-4.76837e-07, -0.5)
+position = Vector2(0, -0.5)
 texture = ExtResource("3_phase")
+centered = false
+offset = Vector2(-8, -22)
 hframes = 4
 frame = 1
 region_rect = Rect2(-0.0482864, -0.0240459, 15.3697, 15.8603)
 region_filter_clip_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 3.3)
+position = Vector2(0, -0.349999)
 shape = SubResource("RectangleShape2D_n2ld1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -242,13 +251,9 @@ wait_time = 0.04
 
 [node name="DashParticles" type="GPUParticles2D" parent="."]
 z_index = 2
-position = Vector2(0, 8)
+position = Vector2(0, 1.5)
 emitting = false
 amount = 90
 process_material = SubResource("ParticleProcessMaterial_cbv2c")
-
-[node name="Pistol" parent="." instance=ExtResource("4_h5t58")]
-z_index = 2
-position = Vector2(3, 2)
 
 [connection signal="timeout" from="GhostTimer" to="." method="_on_ghost_timer_timeout"]
