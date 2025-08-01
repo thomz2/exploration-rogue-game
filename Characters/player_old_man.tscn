@@ -222,11 +222,10 @@ ghost_node = ExtResource("2_yo3ci")
 bullet_speed = 10.0
 
 [node name="Pistol" parent="." instance=ExtResource("4_h5t58")]
-z_as_relative = true
-y_sort_enabled = false
 position = Vector2(4, -4.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_as_relative = false
 material = SubResource("ShaderMaterial_23qf6")
 position = Vector2(0, -0.5)
 texture = ExtResource("3_phase")

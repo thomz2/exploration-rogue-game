@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LeafableData" load_steps=2 format=3 uid="uid://chkrcrojnk4gi"]
+
+[ext_resource type="Script" path="res://Util/leafable_data.gd" id="1_yrftn"]
+
+[resource]
+script = ExtResource("1_yrftn")
+name = ""
+region_xy = Vector2(72, 6)
+region_wh = Vector2(4, 8)
+scale_range = Vector2(2, 2.8)
+offset = Vector2(-1.5, -8)

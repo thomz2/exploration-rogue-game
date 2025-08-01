@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var player = $/root/GameLevel/PlayerOldMan
+@onready var player = get_tree().get_nodes_in_group("players")[0]
 @onready var animation_player = $AnimationPlayer
 var saw_player = false
 

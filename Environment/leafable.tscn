@@ -3,22 +3,6 @@
 [ext_resource type="Script" path="res://Environment/leafable.gd" id="1_38u76"]
 [ext_resource type="Texture2D" uid="uid://bsssyqggjvdd5" path="res://Art/Tilesets/grass_tileset.png" id="1_rtc2a"]
 
-[sub_resource type="Animation" id="Animation_f5hxy"]
-resource_name = "left_rotation"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -0.261799]
-}
-
 [sub_resource type="Animation" id="Animation_tnb40"]
 length = 0.001
 tracks/0/type = "value"
@@ -50,8 +34,8 @@ tracks/0/keys = {
 "values": [-0.261799, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_dsbfb"]
-resource_name = "right_rotation"
+[sub_resource type="Animation" id="Animation_f5hxy"]
+resource_name = "left_rotation"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -63,7 +47,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.261799]
+"values": [0.0, -0.261799]
 }
 
 [sub_resource type="Animation" id="Animation_aihty"]
@@ -82,6 +66,22 @@ tracks/0/keys = {
 "values": [0.261799, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_dsbfb"]
+resource_name = "right_rotation"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.261799]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a23yj"]
 _data = {
 "RESET": SubResource("Animation_tnb40"),
@@ -92,7 +92,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2jpd"]
-size = Vector2(6, 2)
+size = Vector2(10, 4)
 
 [node name="Leafable" type="Node2D" groups=["sortables"]]
 script = ExtResource("1_38u76")
@@ -101,9 +101,9 @@ script = ExtResource("1_38u76")
 scale = Vector2(2, 2)
 texture = ExtResource("1_rtc2a")
 centered = false
-offset = Vector2(-1.5, -6)
+offset = Vector2(-1.5, -8)
 region_enabled = true
-region_rect = Rect2(88, 7, 3, 6)
+region_rect = Rect2(72, 6, 4, 8)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
