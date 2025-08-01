@@ -2,7 +2,10 @@ extends Node2D
 
 @onready var muzzle = $Marker2D
 @export var bullet_scene = preload("res://Bullets/bullet.tscn") # Aqui eu pego a scene para instanciar ela no mundo
-@onready var player = get_node("/root/GameLevel/PlayerOldMan")  # Aqui eu pego uma instância já existente
+var player
+
+func _ready() -> void:
+	player = get_tree().get_nodes_in_group("players")[0] # Aqui eu pego uma instância já existente
 
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())

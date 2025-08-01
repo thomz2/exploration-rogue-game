@@ -2,12 +2,16 @@ class_name Bullet
 extends Node2D
 
 var direction : Vector2
-@onready var player = $/root/GameLevel/PlayerOldMan
-@onready var bullet_speed = player.bullet_speed
+var player 
+var bullet_speed
 @export var friction: float = 0.1  # 0 = sem atrito, 100 = atrito alto, nem se move
 @export var damage: float = 3.5
 
 func _ready() -> void:
+	# Inicializando variaveis 
+	player = get_tree().get_nodes_in_group("players")[0]
+	bullet_speed = player.bullet_speed
+	
 	scale.x = player.bullet_size
 	scale.y = player.bullet_size
 	$AnimationPlayer.play("appear")
