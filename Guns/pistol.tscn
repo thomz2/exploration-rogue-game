@@ -17,7 +17,6 @@ z_as_relative = false
 script = ExtResource("1_xrtu4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_as_relative = false
 material = SubResource("ShaderMaterial_kxbye")
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_e4gwe")

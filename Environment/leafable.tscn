@@ -95,6 +95,8 @@ _data = {
 size = Vector2(10, 4)
 
 [node name="Leafable" type="Node2D" groups=["sortables"]]
+z_index = 1
+z_as_relative = false
 script = ExtResource("1_38u76")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

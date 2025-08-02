@@ -8,7 +8,7 @@ func _process(delta: float):
 	
 
 func handle_aim():
-	var player = get_parent().get_node("PlayerOldMan")
+	var player = get_tree().get_first_node_in_group("players")
 	
 	var min_offset = -1 * player.range
 	var max_offset = player.range

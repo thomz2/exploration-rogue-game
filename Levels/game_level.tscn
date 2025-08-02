@@ -2261,7 +2261,6 @@ script = ExtResource("3_kx50u")
 position = Vector2(69, 35)
 
 [node name="PlayerOldMan" parent="." instance=ExtResource("5_sw5do")]
-y_sort_enabled = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerOldMan"]
 remote_path = NodePath("../../Camera2D")

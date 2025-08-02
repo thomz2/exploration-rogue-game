@@ -53,7 +53,7 @@ _data = {
 }
 
 [node name="TrainingDummy" type="CharacterBody2D" groups=["enemies", "sortables"]]
-z_index = 2
+z_index = 1
 z_as_relative = false
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_x8gq5")

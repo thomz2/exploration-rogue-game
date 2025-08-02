@@ -213,19 +213,14 @@ gravity = Vector3(0, 0, 0)
 color_ramp = SubResource("GradientTexture1D_1kj5v")
 
 [node name="PlayerOldMan" type="CharacterBody2D" groups=["players"]]
-z_index = 2
+z_index = 1
 z_as_relative = false
-y_sort_enabled = true
 scale = Vector2(2, 2)
 script = ExtResource("1_ny465")
 ghost_node = ExtResource("2_yo3ci")
 bullet_speed = 10.0
 
-[node name="Pistol" parent="." instance=ExtResource("4_h5t58")]
-position = Vector2(4, -4.5)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_as_relative = false
 material = SubResource("ShaderMaterial_23qf6")
 position = Vector2(0, -0.5)
 texture = ExtResource("3_phase")
@@ -249,9 +244,13 @@ libraries = {
 wait_time = 0.04
 
 [node name="DashParticles" type="GPUParticles2D" parent="."]
-z_index = 2
+z_as_relative = false
 emitting = false
 amount = 90
 process_material = SubResource("ParticleProcessMaterial_cbv2c")
+
+[node name="Pistol" parent="." instance=ExtResource("4_h5t58")]
+z_as_relative = true
+position = Vector2(4, -4.5)
 
 [connection signal="timeout" from="GhostTimer" to="." method="_on_ghost_timer_timeout"]
