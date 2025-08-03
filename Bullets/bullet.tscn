@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bctdcyt1fftjd" path="res://Art/Bullets/bullet_1.png" id="1_1tp1o"]
 [ext_resource type="Script" path="res://Bullets/bullet.gd" id="1_5xlg1"]
-[ext_resource type="Shader" path="res://Shaders/bullet.gdshader" id="2_1wkf4"]
+[ext_resource type="Shader" path="res://Shaders/white.gdshader" id="2_1wkf4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7lagt"]
 shader = ExtResource("2_1wkf4")
@@ -50,14 +50,14 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:material:shader_parameter/whiteness")
+tracks/3/path = NodePath("Sprite2D:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_33oow"]
@@ -78,7 +78,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_nk7i1"]
 resource_name = "disappear"
-length = 0.05
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -86,22 +86,22 @@ tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(2, 1)]
+"values": [Vector2(1, 1), Vector2(0, 0), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:material:shader_parameter/whiteness")
+tracks/1/path = NodePath("Sprite2D:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_osblo"]
@@ -174,4 +174,5 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_bn80j")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

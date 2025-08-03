@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dx0r8mjlpo7mn" path="res://Art/Guns/US.png" id="1_e4gwe"]
 [ext_resource type="Script" path="res://Guns/pistol.gd" id="1_xrtu4"]
-[ext_resource type="Shader" path="res://Characters/blur_expansion.gdshader" id="2_wark7"]
+[ext_resource type="Shader" path="res://Shaders/blur_expansion.gdshader" id="2_wark7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kxbye"]
 shader = ExtResource("2_wark7")

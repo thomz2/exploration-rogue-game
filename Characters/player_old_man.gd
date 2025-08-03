@@ -103,24 +103,25 @@ func dash_handler():
 
 # TODO dar uma lida melhor nesse código e entender
 func add_ghost():
-	var ghost = ghost_node.instantiate()
-	var sprite = $Sprite2D
-
-	var atlas = AtlasTexture.new()
-	atlas.atlas = sprite.texture
-
-	var frame_size = sprite.texture.get_size() / Vector2(sprite.hframes, sprite.vframes)
-	var frame_coords = Vector2(sprite.frame % sprite.hframes, sprite.frame / sprite.hframes)
-	atlas.region = Rect2(frame_coords * frame_size, frame_size)
-
-	ghost.texture = atlas
-	ghost.global_position = sprite.global_position
-	ghost.scale = scale
-	ghost.flip_h = sprite.flip_h
-	ghost.flip_v = sprite.flip_v
-
-	# TODO ajeitar depois a porra do y-sort desse fantasma
-	get_tree().current_scene.add_child(ghost)
+	pass
+	#var ghost = ghost_node.instantiate()
+	#var sprite = $Sprite2D
+#
+	#var atlas = AtlasTexture.new()
+	#atlas.atlas = sprite.texture
+#
+	#var frame_size = sprite.texture.get_size() / Vector2(sprite.hframes, sprite.vframes)
+	#var frame_coords = Vector2(sprite.frame % sprite.hframes, sprite.frame / sprite.hframes)
+	#atlas.region = Rect2(frame_coords * frame_size, frame_size)
+#
+	#ghost.texture = atlas
+	#ghost.global_position = sprite.global_position
+	#ghost.scale = scale
+	#ghost.flip_h = sprite.flip_h
+	#ghost.flip_v = sprite.flip_v
+#
+	## TODO ajeitar depois a porra do y-sort desse fantasma
+	#get_tree().current_scene.add_child(ghost)
 
 func add_bullet_upgrade(upgrade : BaseBulletStrategy):
 	bullet_upgrades.append(upgrade)

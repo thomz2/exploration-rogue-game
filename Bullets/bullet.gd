@@ -4,6 +4,7 @@ extends Node2D
 var direction : Vector2
 var player 
 var bullet_speed
+var stop := false
 @export var friction: float = 0.1  # 0 = sem atrito, 100 = atrito alto, nem se move
 @export var damage: float = 3.5
 
@@ -17,13 +18,15 @@ func _ready() -> void:
 	$AnimationPlayer.play("appear")
 
 func _physics_process(delta: float) -> void:
+	if stop:
+		return
 	if $RayCast2D.is_colliding():
 		var hit = $RayCast2D.get_collider()
 		# TODO colocar aqui um if "acertou grupo inimigo" para tratar caso uma das colisões pertença ao grupo "inimigos"
 		# - Além disso, uma boa seria colocar varios tipos de tratamento, para diferentes animações dependendo do que hitar por exemplo
 		#print("Acertou: ", hit.name)
 		
-		await hit_proccess()
+		hit_proccess()
 		
 		return
 		
@@ -38,9 +41,6 @@ func _physics_process(delta: float) -> void:
 
 func hit_proccess():
 	$AnimationPlayer.play("disappear")
-	await $AnimationPlayer.animation_finished
-	$AnimationPlayer.stop()
-	queue_free()
 
 func _on_timer_timeout() -> void:
 	queue_free()
@@ -50,4 +50,9 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() in get_tree().get_nodes_in_group("enemies"):
-		await hit_proccess()
+		stop = true
+		hit_proccess()
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "disappear":
+		queue_free()

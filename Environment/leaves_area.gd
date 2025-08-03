@@ -1,10 +1,11 @@
 extends Node2D
 
-@export var separation = 10
+@export var separation = 5
 
 var leaves_res = [
-	preload("res://Resources/Environment/Leafables/leaf1.tres"),
-	preload("res://Resources/Environment/Leafables/leaf2.tres"),
+	#preload("res://Resources/Environment/Leafables/leaf1.tres"),
+	#preload("res://Resources/Environment/Leafables/leaf2.tres"),
+	preload("res://Resources/Environment/Leafables/leaf3.tres"),
 ]
 
 var leaf_node = preload("res://Environment/leafable.tscn")
@@ -31,4 +32,5 @@ func _ready() -> void:
 			
 			var offset = (Vector2(x, y) - center_offset) * separation
 			leaf_inst.position = offset # posicionando de forma relativa ao nó pai
+			leaf_inst.set_sprite_scale(Vector2(leaf_inst.scale_range.x, leaf_inst.scale_range.x))
 			add_child(leaf_inst)

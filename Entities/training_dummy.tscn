@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Entities/training_dummy.gd" id="1_x8gq5"]
 [ext_resource type="Texture2D" uid="uid://vavkh6qv72to" path="res://Art/Entities/dummy.png" id="2_e0nlc"]
-[ext_resource type="Shader" path="res://Characters/blur_expansion.gdshader" id="2_jmfwi"]
+[ext_resource type="Shader" path="res://Shaders/blur_expansion.gdshader" id="2_jmfwi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hmit"]
 size = Vector2(20, 31)
@@ -55,7 +55,9 @@ _data = {
 [node name="TrainingDummy" type="CharacterBody2D" groups=["enemies", "sortables"]]
 z_index = 1
 z_as_relative = false
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.8, 0.8)
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_x8gq5")
 
 [node name="PhysicColl" type="CollisionPolygon2D" parent="."]
