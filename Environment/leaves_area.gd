@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var separation = 5
+@export var separation = 6
 
 var leaves_res = [
 	#preload("res://Resources/Environment/Leafables/leaf1.tres"),
