@@ -34,9 +34,9 @@ var bullet_upgrades : Array[BaseBulletStrategy] = [
 ]
 
 func _ready():
-	print("posição da arma: ", $Pistol.global_position.y)
-	print("posição do sprite: ", $Sprite2D.global_position.y)
-	
+	#print("posição da arma: ", $Pistol.global_position.y)
+	#print("posição do sprite: ", $Sprite2D.global_position.y)
+	pass
 
 # underscore in godot is equal to "unused"
 # delta é o intervalo de tempo entre o frame anterior e o atual.

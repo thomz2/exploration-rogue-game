@@ -122,7 +122,7 @@ texture = ExtResource("1_rtc2a")
 centered = false
 offset = Vector2(-4, -11)
 region_enabled = true
-region_rect = Rect2(99, 4, 8, 11)
+region_rect = Rect2(99, 3, 10, 13)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_243t1")
 name = ""
-region_xy = Vector2(99, 4)
-region_wh = Vector2(8, 11)
+region_xy = Vector2(99, 3)
+region_wh = Vector2(10, 13)
 scale_range = Vector2(1, 2.4)
 offset = Vector2(-4, -11)
