@@ -9,6 +9,8 @@ extends Node2D
 var noise : FastNoiseLite
 var noise_img : Image
 
+var SEED = 2
+
 var width = 400
 var height = 400
 
@@ -50,7 +52,8 @@ var grass = {
 
 func _ready():
 	noise = noise_texture.noise
-	noise.seed = 2 # ISSO DEFINE O MUNDO GERADO
+	noise.seed = SEED # ISSO DEFINE O MUNDO GERADO
+	seed(SEED)
 	await noise_texture.changed
 	noise_img = noise_texture.get_image()
 	generate_world()
