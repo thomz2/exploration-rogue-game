@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnx42u7mwc3aj"]
 
-[ext_resource type="Script" path="res://Scripts/dungeon_generator.gd" id="1_6rv4w"]
+[ext_resource type="Script" uid="uid://cog3gtt4er2oq" path="res://Scripts/dungeon_generator.gd" id="1_6rv4w"]
 [ext_resource type="Texture2D" uid="uid://c0chqvhth8yls" path="res://Art/Pixel Dungeon Asset Pack/2D Pixel Dungeon Asset Pack/Dungeon_Tileset_at.png" id="2_hsvaw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4awme"]

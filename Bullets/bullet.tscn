@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bwdhereipwach"]
 
 [ext_resource type="Texture2D" uid="uid://bctdcyt1fftjd" path="res://Art/Bullets/bullet_1.png" id="1_1tp1o"]
-[ext_resource type="Script" path="res://Bullets/bullet.gd" id="1_5xlg1"]
-[ext_resource type="Shader" path="res://Shaders/white.gdshader" id="2_1wkf4"]
+[ext_resource type="Script" uid="uid://bjh8evwucp55y" path="res://Bullets/bullet.gd" id="1_5xlg1"]
+[ext_resource type="Shader" uid="uid://38ssbbfvgj2v" path="res://Shaders/white.gdshader" id="2_1wkf4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7lagt"]
 shader = ExtResource("2_1wkf4")
@@ -134,10 +134,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v33b6"]
 _data = {
-"RESET": SubResource("Animation_nnobn"),
-"appear": SubResource("Animation_33oow"),
-"disappear": SubResource("Animation_nk7i1"),
-"troll": SubResource("Animation_osblo")
+&"RESET": SubResource("Animation_nnobn"),
+&"appear": SubResource("Animation_33oow"),
+&"disappear": SubResource("Animation_nk7i1"),
+&"troll": SubResource("Animation_osblo")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bn80j"]

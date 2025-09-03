@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=4 uid="uid://dv4cfrg1qs40w"]
 
 [ext_resource type="PackedScene" uid="uid://d0bhdhaidg4a3" path="res://Characters/player_old_man.tscn" id="2_tnnu7"]
-[ext_resource type="Script" path="res://Scripts/proc_gen_world.gd" id="3_2ngac"]
-[ext_resource type="Script" path="res://Scripts/camera_offset_by_aim_script.gd" id="3_u52p4"]
+[ext_resource type="Script" uid="uid://b343ktl40o0o8" path="res://Scripts/proc_gen_world.gd" id="3_2ngac"]
+[ext_resource type="Script" uid="uid://fvjei7ppudfh" path="res://Scripts/camera_offset_by_aim_script.gd" id="3_u52p4"]
 [ext_resource type="Texture2D" uid="uid://bsssyqggjvdd5" path="res://Art/Tilesets/grass_tileset.png" id="3_vasax"]
 [ext_resource type="PackedScene" uid="uid://tstdijoh60e7" path="res://Environment/leaves_area.tscn" id="5_4pp8u"]
 [ext_resource type="Texture2D" uid="uid://b8u6wupnpf44l" path="res://Art/Tilesets/sand_tileset.png" id="5_flpiv"]

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://clb4efemgfdt5"]
 
-[ext_resource type="Script" path="res://Util/item.gd" id="1_sh3vf"]
+[ext_resource type="Script" uid="uid://bh2kxtbu2iitl" path="res://Util/item.gd" id="1_sh3vf"]
 [ext_resource type="Texture2D" uid="uid://bpksgkxune1xj" path="res://Art/Items/tripleshot_item.png" id="2_hkg3h"]
-[ext_resource type="Script" path="res://Util/Strategy/tripleshot_bullet_strategy.gd" id="3_4eeuh"]
+[ext_resource type="Script" uid="uid://c1wpr52xj4ctb" path="res://Util/Strategy/tripleshot_bullet_strategy.gd" id="3_4eeuh"]
 
 [sub_resource type="Resource" id="Resource_p7aqe"]
 script = ExtResource("3_4eeuh")

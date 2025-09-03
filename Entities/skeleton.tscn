@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://btd1uwns5qxik"]
 
-[ext_resource type="Script" path="res://Entities/skeleton.gd" id="1_2evcw"]
+[ext_resource type="Script" uid="uid://cejtrs36rnj83" path="res://Entities/skeleton.gd" id="1_2evcw"]
 [ext_resource type="Texture2D" uid="uid://bs75nlhovxnvt" path="res://Art/Entities/skeleton.png" id="2_27bjl"]
-[ext_resource type="Shader" path="res://Shaders/blur_expansion.gdshader" id="2_rjya2"]
+[ext_resource type="Shader" uid="uid://bu8fcwat324sn" path="res://Shaders/blur_expansion.gdshader" id="2_rjya2"]
 
 [sub_resource type="Animation" id="Animation_vbyo1"]
 length = 0.001
@@ -14,8 +14,8 @@ loop_mode = 1
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b8fnt"]
 _data = {
-"RESET": SubResource("Animation_vbyo1"),
-"walk": SubResource("Animation_clh7s")
+&"RESET": SubResource("Animation_vbyo1"),
+&"walk": SubResource("Animation_clh7s")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_djbkd"]

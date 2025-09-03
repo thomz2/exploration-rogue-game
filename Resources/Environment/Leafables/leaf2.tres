@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LeafableData" load_steps=2 format=3 uid="uid://chkrcrojnk4gi"]
 
-[ext_resource type="Script" path="res://Util/leafable_data.gd" id="1_yrftn"]
+[ext_resource type="Script" uid="uid://ie6bhprh8cre" path="res://Util/leafable_data.gd" id="1_yrftn"]
 
 [resource]
 script = ExtResource("1_yrftn")

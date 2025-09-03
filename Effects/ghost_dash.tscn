@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dajxjr4vqav7d"]
 
-[ext_resource type="Script" path="res://Scripts/ghost_dash_effect.gd" id="1_yaa1c"]
+[ext_resource type="Script" uid="uid://byqb1r0cddedg" path="res://Scripts/ghost_dash_effect.gd" id="1_yaa1c"]
 
 [node name="Ghost" type="Sprite2D"]
 modulate = Color(0.493545, 0.493546, 0.493546, 1)

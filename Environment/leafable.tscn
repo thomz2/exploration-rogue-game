@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bj7c10mbsqgbt"]
 
-[ext_resource type="Script" path="res://Environment/leafable.gd" id="1_38u76"]
+[ext_resource type="Script" uid="uid://cc70l4a3wl3de" path="res://Environment/leafable.gd" id="1_38u76"]
 [ext_resource type="Texture2D" uid="uid://bsssyqggjvdd5" path="res://Art/Tilesets/grass_tileset.png" id="1_rtc2a"]
 
 [sub_resource type="Animation" id="Animation_tnb40"]
@@ -101,12 +101,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a23yj"]
 _data = {
-"RESET": SubResource("Animation_tnb40"),
-"idle": SubResource("Animation_md0nq"),
-"left_disrotation": SubResource("Animation_eiyx0"),
-"left_rotation": SubResource("Animation_f5hxy"),
-"right_disrotation": SubResource("Animation_aihty"),
-"right_rotation": SubResource("Animation_dsbfb")
+&"RESET": SubResource("Animation_tnb40"),
+&"idle": SubResource("Animation_md0nq"),
+&"left_disrotation": SubResource("Animation_eiyx0"),
+&"left_rotation": SubResource("Animation_f5hxy"),
+&"right_disrotation": SubResource("Animation_aihty"),
+&"right_rotation": SubResource("Animation_dsbfb")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2jpd"]

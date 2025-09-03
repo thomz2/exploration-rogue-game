@@ -1,27 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://bc6bgvn7ih4n0"]
 
 [ext_resource type="Texture2D" uid="uid://cbh4ktic1jct1" path="res://Art/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_ggyff"]
-[ext_resource type="Script" path="res://Characters/player_cat.gd" id="1_ksnmb"]
+[ext_resource type="Script" uid="uid://brhu761q2wyt4" path="res://Characters/player_cat.gd" id="1_ksnmb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2ld1"]
 size = Vector2(7, 8)
-
-[sub_resource type="Animation" id="Animation_iqt2o"]
-resource_name = "walk_right"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [14, 15]
-}
 
 [sub_resource type="Animation" id="Animation_nabpb"]
 length = 0.001
@@ -55,23 +38,6 @@ tracks/0/keys = {
 "values": [2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_2105c"]
-resource_name = "walk_up"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [6, 7]
-}
-
 [sub_resource type="Animation" id="Animation_isuoc"]
 resource_name = "walk_left"
 length = 0.4
@@ -89,13 +55,47 @@ tracks/0/keys = {
 "values": [10, 11]
 }
 
+[sub_resource type="Animation" id="Animation_iqt2o"]
+resource_name = "walk_right"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_2105c"]
+resource_name = "walk_up"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [6, 7]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qyrxb"]
 _data = {
-"RESET": SubResource("Animation_nabpb"),
-"walk_down": SubResource("Animation_0khrw"),
-"walk_left": SubResource("Animation_isuoc"),
-"walk_right": SubResource("Animation_iqt2o"),
-"walk_up": SubResource("Animation_2105c")
+&"RESET": SubResource("Animation_nabpb"),
+&"walk_down": SubResource("Animation_0khrw"),
+&"walk_left": SubResource("Animation_isuoc"),
+&"walk_right": SubResource("Animation_iqt2o"),
+&"walk_up": SubResource("Animation_2105c")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h7q4i"]
